@@ -1,0 +1,39 @@
+---
+- hosts: nodo1
+  become: yes
+  vars:
+    domain: "example.com"
+
+  tasks:
+  - name: Update
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+  - name: Install Packages
+    apt:
+      name: "{{ item }}"
+      update_cache: yes
+    with_items:
+      - mariadb-server
+      - bind9
+
+  - name: Adding conf file Bind9
+      template:
+        src: ../files/named.conf.local
+        dest: /etc/bind/named.conf.local
+
+  - name: Adding configuring zone {{domain}}
+      template:
+        src: ../files/db.example.com
+        dest: /var/cache/bind/db.{{domain}}
+
+  - name: Adding configuring zone inverse
+      template:
+        src: ../files/db.10.0.0
+        dest: /var/cache/bind/db.10.0.0
+
+    - name: Restarting bind9
+      service:
+        name: bind9
+        state: restarted

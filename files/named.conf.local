@@ -1,0 +1,9 @@
+zone "{{domain}}" {
+        type master;
+        file "db.{{domain}}";
+};
+
+zone "12.10.10.in-addr.arpa" {
+        type master;
+        file "db.10.10.12";
+};
