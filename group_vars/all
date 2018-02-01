@@ -1,0 +1,14 @@
+# MariaDB
+
+mysql_port: 3306
+mysql_root_password: root
+
+# Host
+
+server_hostname: wordpress.example.com
+
+# WordPress
+
+wp_db_name: wordpress
+wp_db_user: wordpress
+wp_db_password: password
