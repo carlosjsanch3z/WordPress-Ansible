@@ -1,0 +1,30 @@
+---
+- name: Update repositories cache and install "bind9" package
+  become: yes
+  apt:
+    name: bind9
+    update_cache: yes
+
+- name: Start bind9
+  become: yes
+  service:
+    name: bind9
+    state: started
+
+- name: Bind9 Configuration File
+  become: yes
+  copy:
+    src: roles/bind9/templates/named.conf.local
+    dest: /etc/bind/named.conf.local
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Bind9 Zone Direct
+  become: yes
+  copy:
+    src: roles/bind9/templates/db.example.com
+    dest: /var/cache/bind/db.example.com
+    owner: root
+    group: root
+    mode: 0700

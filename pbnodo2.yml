@@ -2,5 +2,5 @@
 
   roles:
     - nginx
-    - php7-fpm
-    - wordpress
+    - php
+#    - wordpress

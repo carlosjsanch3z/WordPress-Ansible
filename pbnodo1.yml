@@ -2,4 +2,4 @@
 
   roles:
     - mariadb
-#    - bind9
+    - bind9

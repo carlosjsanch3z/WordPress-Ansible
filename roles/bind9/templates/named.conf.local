@@ -1,0 +1,6 @@
+zone "example.com" {
+	type master;
+	file "/var/cache/bind/db.example.com";
+	forwarders {
+	};
+};

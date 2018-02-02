@@ -1,6 +1,5 @@
 # MariaDB
 
-mysql_port: 3306
 mysql_root_password: root
 
 # Host
@@ -9,6 +8,22 @@ server_hostname: wordpress.example.com
 
 # WordPress
 
-wp_db_name: wordpress
-wp_db_user: wordpress
-wp_db_password: password
+wp_db_name: wordpressdb
+wp_db_user: wordpressuser
+wp_db_password: passwordwp
+wb_db_host: maria.example.com
+
+# Deploy
+
+auto_up_disable: false
+core_update_level: true
+wp_core_url: wordpress.example.com
+wp_core_title: DeployingAnsible
+wp_core_admin_user: admin
+wp_core_admin_pass: admin
+wp_core_admin_mail: admin@example.com
+
+# Address
+
+ip_nodo1: 172.16.0.100
+ip_nodo2: 172.16.0.69

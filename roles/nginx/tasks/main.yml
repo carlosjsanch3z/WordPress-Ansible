@@ -1,0 +1,21 @@
+---
+- name: Update repositories cache and install "nginx" package
+  become: yes
+  apt:
+    name: nginx
+    update_cache: yes
+
+- name: Start nginx
+  become: yes
+  service:
+    name: nginx
+    state: started
+
+- name: Update Nginx Confs for WordPress + PHP
+  become: yes
+  copy:
+    src: roles/nginx/templates/wordpress.conf
+    dest: /etc/nginx/sites-available/default
+    owner: www-data
+    group: www-data
+    mode: 0644
