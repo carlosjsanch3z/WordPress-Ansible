@@ -22,7 +22,7 @@ apt install vagrant
 Clone the repository:
 
 ~~~ 
-git clone git@github.com:carlosjsanch3z/WordPress-Ansible.git
+git clone https://github.com/carlosjsanch3z/WordPress-Ansible.git
 ~~~
 
 Enable the Virtual environment:
