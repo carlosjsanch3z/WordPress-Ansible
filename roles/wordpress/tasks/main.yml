@@ -1,1 +1,10 @@
+---
+- name: download wp-cli
+  get_url:
+    url: https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    dest: .
+    owner: vagrant
+    group: vagrant
 
+- name: exec script
+  script: ./conf/wordpress/run.sh --some-arguments {{ wp_url }} {{ wp_title }} {{ wp_admin }} {{ wp_pass }}
