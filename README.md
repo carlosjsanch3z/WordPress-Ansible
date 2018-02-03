@@ -45,3 +45,14 @@ Up scenario within the cloned directory:
 vagrant up --provision
 ~~~
 
+Add dns server in our host (/etc/resolv.conf):
+
+~~~ 
+nameserver 172.16.0.100
+~~~
+
+Open your browser and type:
+
+~~~
+wordpress.example.com
+~~~
