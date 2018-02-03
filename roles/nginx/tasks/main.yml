@@ -13,9 +13,6 @@
 
 - name: Update Nginx Confs for WordPress + PHP
   become: yes
-  copy:
-    src: roles/nginx/templates/wordpress.conf
+  template:
+    src: ../templates/wordpress.conf
     dest: /etc/nginx/sites-available/default
-    owner: www-data
-    group: www-data
-    mode: 0644

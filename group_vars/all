@@ -1,3 +1,11 @@
+# Address
+
+ip_nodo1: 172.16.0.100
+ip_nodo2: 172.16.0.69
+
+int_nodo1: 10.0.0.12
+int_nodo2: 10.0.0.13
+
 # MariaDB
 
 mysql_root_password: root
@@ -11,19 +19,14 @@ server_hostname: wordpress.example.com
 wp_db_name: wordpressdb
 wp_db_user: wordpressuser
 wp_db_password: passwordwp
-wb_db_host: maria.example.com
+wp_db_host: "{{ int_nodo1 }}"
 
 # Deploy
 
 auto_up_disable: false
 core_update_level: true
 wp_core_url: wordpress.example.com
-wp_core_title: DeployingAnsible
+wp_core_title: Ansible
 wp_core_admin_user: admin
 wp_core_admin_pass: admin
 wp_core_admin_mail: admin@example.com
-
-# Address
-
-ip_nodo1: 172.16.0.100
-ip_nodo2: 172.16.0.69
